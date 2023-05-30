@@ -6,8 +6,8 @@ class TimeblockObj {
 }
 
 window.onload = function () {
-  const currentTimeblocks = getCurrentTimeblocks();
   const currentTime = moment();
+  const currentTimeSections = getCurrentTimeSections();
 
   displayCurrentDate(currentTime);
   displayTimeblockRows(currentTime);
@@ -15,14 +15,16 @@ window.onload = function () {
   document
     .querySelector('.container')
     .addEventListener('click', function (event) {
-      containerClicked(event, currentTimeblocks);
+      containerClicked(event, currentTimeSections);
     });
-  setTimeblockText(currentTimeblocks);
+  setTimeblockText(currentTimeSections);
 };
 
-function getCurrentTimeblocks() {
-  const currentTimeblocks = localStorage.getItem('timeblockObjects');
-  return currentTimeblocks ? JSON.parse(currentTimeblocks) : [];
+function getCurrentTimeSections() {
+  const currentTimeSections = localStorage.getItem(
+    'timeblockObjects'
+  );
+  return currentTimeSections ? JSON.parse(currentTimeSections) : [];
 }
 
 function displayCurrentDate(currentTime) {
@@ -30,7 +32,7 @@ function displayCurrentDate(currentTime) {
     currentTime.format('dddd, MMMM Do');
 }
 
-/*** functions for displaying all timeblock rows ***/
+/*** functions timeblock displays ***/
 function displayTimeblockRows(currentTime) {
   const currentHour = currentTime.hour();
   //working hours are 9-5 or 9-17
@@ -106,7 +108,7 @@ function appendTimeblockColumns(
   }
 }
 
-/*** functions for saving to local storage ***/
+/*** local storage functions ***/
 function containerClicked(event, timeblockList) {
   if (isSaveButton(event)) {
     const timeblockHour = getTimeblockHour(event);
