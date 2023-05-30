@@ -35,7 +35,6 @@ function displayCurrentDate(currentTime) {
 /*** functions timeblock displays ***/
 function displayTimeblockRows(currentTime) {
   const currentHour = currentTime.hour();
-  //working hours are 9-5 or 9-17
   for (let i = 9; i <= 17; i++) {
     const timeblock = createTimeblockRow(i);
     const hourCol = createCol(createHourDiv(i), 1);
@@ -86,6 +85,14 @@ function getTextAreaBackgroundClass(hour, currentHour) {
     : hour === currentHour
     ? 'present'
     : 'future';
+
+  // if (hour < currentHour) {
+  //   // 'past'
+  // } else if (hour === currentHour) {
+  //   // 'present'
+  // } else {
+  //   // 'future'
+  // }
 }
 
 function createSaveBtn(hour) {
