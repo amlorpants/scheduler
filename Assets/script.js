@@ -89,7 +89,7 @@ function getTextAreaBackgroundClass(hour, currentHour) {
 function createSaveBtn(hour) {
   const saveBtn = document.createElement('button');
   saveBtn.classList.add('saveBtn');
-  saveBtn.innerHTML = '<i class="fas fa-save"></i>';
+  saveBtn.textContent = 'Save';
   saveBtn.setAttribute('data-hour', hour);
   return saveBtn;
 }
@@ -158,12 +158,12 @@ function saveTimeblockList(timeblockList) {
 }
 
 function setTimeblockText(timeblockList) {
-  timeblockList.forEach((timeblock) => {
-    const textArea = document.querySelector(
+  if (timeblockList.length === 0) {
+    return;
+  }
+  for (let timeblock of timeblockList) {
+    document.querySelector(
       `#timeblock-${timeblock.hour} textarea`
-    );
-    if (textArea) {
-      textArea.value = timeblock.todo;
-    }
-  });
+    ).value = timeblock.todo;
+  }
 }
