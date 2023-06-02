@@ -16,4 +16,4 @@ Amy Taylor
 
 ## Visual
 
-![Screenshot 2023-05-26 at 16-37-01 Screenshot](https://github.com/amlorpants/Coding-Quiz/assets/87711695/d5cbd6b5-a106-4796-bca0-047baca80cce)
+![Screenshot 2023-06-02 at 10-38-38 Work Day Scheduler](https://github.com/amlorpants/scheduler/assets/87711695/c911d9d6-6b35-4f04-baef-c35503a1c9cd)
