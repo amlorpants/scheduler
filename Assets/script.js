@@ -1,3 +1,4 @@
+// date/time population
 class TimeblockObj {
   constructor(hour, todo) {
     this.hour = hour;
@@ -32,7 +33,7 @@ function displayCurrentDate(currentTime) {
     currentTime.format('dddd, MMMM Do');
 }
 
-/*** functions timeblock displays ***/
+/*** functions for timeblock display below ***/
 function displayTimeblockRows(currentTime) {
   const currentHour = currentTime.hour();
   for (let i = 9; i <= 17; i++) {
@@ -86,6 +87,7 @@ function getTextAreaBackgroundClass(hour, currentHour) {
     ? 'present'
     : 'future';
 
+  // alternative way to write this function:
   // if (hour < currentHour) {
   //   // 'past'
   // } else if (hour === currentHour) {
@@ -115,7 +117,7 @@ function appendTimeblockColumns(
   }
 }
 
-/*** local storage functions ***/
+/*** below are all local storage functions ***/
 function containerClicked(event, timeblockList) {
   if (isSaveButton(event)) {
     const timeblockHour = getTimeblockHour(event);
